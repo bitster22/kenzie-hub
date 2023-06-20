@@ -1,14 +1,16 @@
-import { Link } from "react-router-dom"
 import { RegisterForm } from "../../components/RegisterForm"
+import { StyledContainer } from "../../styles/grid"
+import { Header } from "../../components/Header"
+import { StyledLink } from "../../styles/button"
 
 export const RegisterPage = () =>{
     return(
-        <div>
-            <div>
-                <span>Kenzie Hub</span>
-                <Link to="/">Voltar</Link>
-            </div>
+
+        <StyledContainer>
+            <Header>
+                <StyledLink to="/">Voltar</StyledLink>
+            </Header>
             <RegisterForm/>
-        </div>
+        </StyledContainer>
     )
 }

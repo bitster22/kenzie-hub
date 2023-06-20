@@ -17,12 +17,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 .title-1 {
 	font-size: 1.125rem;
-	font-family: "Inter";
 	font-weight: 700;
-	font-style: normal;
-	line-height: 28px;
-	text-decoration: none;
-	text-transform: none;
 }
 .title-2 {
 	font-size: 1rem;

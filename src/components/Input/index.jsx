@@ -1,13 +1,15 @@
 import { forwardRef } from "react"
+import { StyledError, StyledInput, StyledLabel } from "../../styles/form"
+import { StyledContainer } from "./style"
 
 export const Input = forwardRef(({ label, error, ...rest}, ref)=>{
     return(
-        <div>
-            <label>{label}</label>
-            <input ref={ref} {...rest} error={error ? true:false}/>
+        <StyledContainer>
+            <StyledLabel>{label}</StyledLabel>
+            <StyledInput ref={ref} {...rest} error={error ? true:false}/>
             {error? (
-                <p>{error.message}</p>
+                <StyledError>{error.message}</StyledError>
             ):null}
-        </div>
+        </StyledContainer>
     )
 })

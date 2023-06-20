@@ -21,4 +21,8 @@ export const ResetStyle = createGlobalStyle`
     ul{
         list-style: none;
     }
+
+    body{
+        background-color: var(--grey-4);
+    }
 `
