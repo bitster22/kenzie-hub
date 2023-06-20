@@ -6,7 +6,10 @@ import { Input } from "../Input";
 import { Link, useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
+import { StyledForm } from "../../styles/form";
+import { StyledBigLink, StyledButton } from "../../styles/button";
+import { StyledHeadline, StyledTitleOne } from "../../styles/typography";
 
 export const LoginForm = ({ setUser }) => {
   const [loading, setLoading] = useState(false);
@@ -30,7 +33,7 @@ export const LoginForm = ({ setUser }) => {
       localStorage.setItem("@TOKEN", data.token);
       localStorage.setItem("@USERID", data.user.id);
 
-      toast.success('Logado com sucesso, bem vindo(a) '+data.user.name, {
+      toast.success("Logado com sucesso, bem vindo(a) " + data.user.name, {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -39,22 +42,21 @@ export const LoginForm = ({ setUser }) => {
         draggable: true,
         progress: undefined,
         theme: "dark",
-        });
-      setTimeout(()=>{
+      });
+      setTimeout(() => {
         navigate("/dashbord");
-      }, 3000)
+      }, 3000);
     } catch (error) {
-        toast.error(error, {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-            });
-            
+      toast.error(error, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     } finally {
       setLoading(false);
     }
@@ -66,26 +68,30 @@ export const LoginForm = ({ setUser }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(submit)} noValidate>
-      <ToastContainer/>
-      <h1>Login</h1>
+    <StyledForm onSubmit={handleSubmit(submit)} noValidate>
+      <ToastContainer />
+      <StyledTitleOne className="center">Login</StyledTitleOne>
       <Input
         label="Email"
         type="email"
+        placeholder="Digite seu email aqui"
         {...register("email")}
         error={errors.email}
       />
       <Input
         label="Senha"
         type="password"
+        placeholder="Digite sua senha aqui"
         {...register("password")}
         error={errors.password}
       />
-      <button>{loading ? "Enviando..." : "Enviar"}</button>
+      <StyledButton>{loading ? "Enviando..." : "Enviar"}</StyledButton>
 
-      <p>Ainda não possui uma conta?</p>
+      <StyledHeadline className="center">
+        Ainda não possui uma conta?
+      </StyledHeadline>
 
-      <Link to="/register">Cadastre-se</Link>
-    </form>
+      <StyledBigLink to="/register">Cadastre-se</StyledBigLink>
+    </StyledForm>
   );
 };

@@ -1,11 +1,11 @@
 import { StyledHeader } from "./style";
-import logo from "../../assets/Logo.svg"
+import logo from "../../assets/Logo.svg";
 
-export const Header = ({children}) => {
-    return (
-        <StyledHeader>
-            <img src={logo} alt="" />
-            {children}
-        </StyledHeader>
-    )
+export const Header = ({ children, contentstyle }) => {
+  return (
+    <StyledHeader contentstyle={contentstyle}>
+      <img src={logo} alt="" />
+      {children}
+    </StyledHeader>
+  );
 };

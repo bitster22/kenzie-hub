@@ -25,4 +25,4 @@ export const ResetStyle = createGlobalStyle`
     body{
         background-color: var(--grey-4);
     }
-`
+`;

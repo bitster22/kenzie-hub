@@ -1,21 +1,12 @@
 import { LoginForm } from "../../components/LoginForm";
+import { StyledContainer } from "../../styles/grid";
+import { Header } from "../../components/Header";
 
-export const LoginPage = ({setUser}) => {
+export const LoginPage = ({ setUser }) => {
   return (
-    <div>
-      <span>Kenzie Hub</span>
-      <LoginForm setUser={setUser}/>
-    </div>
+    <StyledContainer>
+      <Header contentstyle="center" />
+      <LoginForm setUser={setUser} />
+    </StyledContainer>
   );
 };
-
-{/* <form action="">
-  <h1>Login</h1>
-  <label htmlFor="email">Email</label>
-  <input type="email" name="" id="email" />
-  <label htmlFor="password">Senha</label>
-  <input type="password" name="" id="password" />
-  <button>Entrar</button>
-  <h3>Ainda não possui uma conta?</h3>
-  <button>Cadastre-se</button>
-</form>; */}

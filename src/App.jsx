@@ -1,15 +1,15 @@
-import { RoutesMain } from './routes/RoutesMain'
-import { GlobalStyle } from './styles/globals'
-import { ResetStyle } from './styles/reset'
+import { RoutesMain } from "./routes/RoutesMain";
+import { GlobalStyle } from "./styles/globals";
+import { ResetStyle } from "./styles/reset";
 
-function App() {
+export const App = () => {
   return (
     <>
-      <GlobalStyle/>
-      <ResetStyle/>
-      <RoutesMain/>
+      <GlobalStyle />
+      <ResetStyle />
+      <RoutesMain />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
