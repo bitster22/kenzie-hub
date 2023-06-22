@@ -1,8 +1,8 @@
 import { Input } from "../Input";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Link, useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { api } from "../../services/api";
 import { registerFormSchema } from "./registerFormSchema";
@@ -34,17 +34,7 @@ export const RegisterForm = () => {
         course_module: formData.course_module,
       };
       await api.post("/users", body);
-
-      toast.success("Conta criada com sucesso!", {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
+      toast.success("Conta criada com sucesso!");
       setTimeout(() => {
         navigate("/");
       }, 3000);
@@ -69,7 +59,6 @@ export const RegisterForm = () => {
 
   return (
     <StyledForm onSubmit={handleSubmit(submit)} noValidate>
-      <ToastContainer />
       <StyledFormTextContainer>
         <StyledTitleOne>Crie sua conta</StyledTitleOne>
         <StyledHeadline>Rápido e grátis, vamos nessa</StyledHeadline>

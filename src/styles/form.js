@@ -46,7 +46,7 @@ export const StyledLabel = styled.label`
 export const StyledError = styled.p`
   font-weight: 400;
   font-size: 0.625rem;
-  color: var(--grey-1);
+  color: var(--negative);
 `;
 
 export const StyledSelect = styled.select`

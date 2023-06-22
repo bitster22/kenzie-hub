@@ -4,6 +4,7 @@ import { Header } from "../../components/Header";
 import { StyledLink } from "../../styles/button";
 import { StyledContainerDashbord } from "../../styles/grid";
 import { StyledBorder } from "./style";
+import { ContentDashbord } from "../../components/ContentDashbord";
 
 export const DashbordPage = ({ user }) => {
   return (
@@ -25,6 +26,9 @@ export const DashbordPage = ({ user }) => {
           <UserInfoDashbord user={user} />
         </StyledContainerDashbord>
       </StyledBorder>
+      <StyledContainerDashbord>
+        <ContentDashbord />
+      </StyledContainerDashbord>
     </>
   );
 };

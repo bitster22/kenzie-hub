@@ -3,9 +3,9 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginFormSchema } from "./loginFormSchema";
 import { Input } from "../Input";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { StyledForm } from "../../styles/form";
 import { StyledBigLink, StyledButton } from "../../styles/button";
@@ -32,17 +32,7 @@ export const LoginForm = ({ setUser }) => {
       setUser(data.user);
       localStorage.setItem("@TOKEN", data.token);
       localStorage.setItem("@USERID", data.user.id);
-
-      toast.success("Logado com sucesso, bem vindo(a) " + data.user.name, {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
+      toast.success("Logado com sucesso, bem vindo(a) " + data.user.name);
       setTimeout(() => {
         navigate("/dashbord");
       }, 3000);
@@ -69,7 +59,6 @@ export const LoginForm = ({ setUser }) => {
 
   return (
     <StyledForm onSubmit={handleSubmit(submit)} noValidate>
-      <ToastContainer />
       <StyledTitleOne className="center">Login</StyledTitleOne>
       <Input
         label="Email"
